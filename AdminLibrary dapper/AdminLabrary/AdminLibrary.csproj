@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF29F450-0F9F-40BE-ACDE-6146491F906F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AdminLabrary</RootNamespace>
+    <AssemblyName>AdminLabrary</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtentReports, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.4.0.3\lib\ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AppLocal, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AnalysisServices.AppLocal.Tabular, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="MongoDB.Bson, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.2\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.2\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.2\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conexion\Administradores.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\Alquileres.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\Autores.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\biblioteca.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>biblioteca.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\biblioteca.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\biblioteca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>biblioteca.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\Categorias.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\conexion.cs" />
+    <Compile Include="conexion\Editoriales.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\Lectores.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexion\Libros.cs">
+      <DependentUpon>biblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="controladores\CAlquileres.cs" />
+    <Compile Include="controladores\CAutores.cs" />
+    <Compile Include="controladores\CAdministradores.cs" />
+    <Compile Include="controladores\CCategorias.cs" />
+    <Compile Include="controladores\CEditoriales.cs" />
+    <Compile Include="controladores\CLectores.cs" />
+    <Compile Include="controladores\CLibros.cs" />
+    <Compile Include="entidades\Alquileres.cs" />
+    <Compile Include="entidades\AlquileresPendientes.cs" />
+    <Compile Include="entidades\Autores.cs" />
+    <Compile Include="entidades\Administradores.cs" />
+    <Compile Include="entidades\Categorias.cs" />
+    <Compile Include="entidades\Editoriales.cs" />
+    <Compile Include="entidades\Lectores.cs" />
+    <Compile Include="entidades\Libros.cs" />
+    <Compile Include="formularios\frmBuscar\frmBuscarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarAutor.Designer.cs">
+      <DependentUpon>frmBuscarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarLector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarLector.Designer.cs">
+      <DependentUpon>frmBuscarLector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarlibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarlibro.Designer.cs">
+      <DependentUpon>frmBuscarlibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmBuscar\frmBuscarEditorial.Designer.cs">
+      <DependentUpon>frmBuscarEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarAdmin.Designer.cs">
+      <DependentUpon>frmActualizarAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarAutores.Designer.cs">
+      <DependentUpon>frmActualizarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarCategoria.Designer.cs">
+      <DependentUpon>frmActualizarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarEditorial.Designer.cs">
+      <DependentUpon>frmActualizarEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarLectores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarLectores.Designer.cs">
+      <DependentUpon>frmActualizarLectores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmActualizarLibros.Designer.cs">
+      <DependentUpon>frmActualizarLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarAdministrador.Designer.cs">
+      <DependentUpon>frmInsertarAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarAutores.Designer.cs">
+      <DependentUpon>frmInsertarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarCategoria.Designer.cs">
+      <DependentUpon>frmInsertarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarEditorial.Designer.cs">
+      <DependentUpon>frmInsertarEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarLector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarLector.Designer.cs">
+      <DependentUpon>frmInsertarLector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarLibro.Designer.cs">
+      <DependentUpon>frmInsertarLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmAlquileres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmAlquileres.Designer.cs">
+      <DependentUpon>frmAlquileres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmAdministradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmAdministradores.Designer.cs">
+      <DependentUpon>frmAdministradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmInsertarAlquiler.Designer.cs">
+      <DependentUpon>frmInsertarAlquiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmLectores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmLectores.Designer.cs">
+      <DependentUpon>frmLectores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmPrestamosFinalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmPrestamosFinalizados.Designer.cs">
+      <DependentUpon>frmPrestamosFinalizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmAutor.Designer.cs">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmCategoria.Designer.cs">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmEditoriales.Designer.cs">
+      <DependentUpon>frmEditoriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\principales\frmLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\principales\frmLibros.Designer.cs">
+      <DependentUpon>frmLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmRecibir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\insert-update\frmRecibir.Designer.cs">
+      <DependentUpon>frmRecibir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modelos\LinqL.cs" />
+    <Compile Include="modelos\MAlquileres.cs" />
+    <Compile Include="modelos\MAutores.cs" />
+    <Compile Include="modelos\MAdministradores.cs" />
+    <Compile Include="modelos\MCategorias.cs" />
+    <Compile Include="modelos\MEditoriales.cs" />
+    <Compile Include="modelos\MLectores.cs" />
+    <Compile Include="modelos\MLibros.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="formularios\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formularios\frmBuscar\frmBuscarAutor.resx">
+      <DependentUpon>frmBuscarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmBuscar\frmBuscarLector.resx">
+      <DependentUpon>frmBuscarLector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmBuscar\frmBuscarlibro.resx">
+      <DependentUpon>frmBuscarlibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmBuscar\frmBuscarEditorial.resx">
+      <DependentUpon>frmBuscarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmActualizarAdmin.resx">
+      <DependentUpon>frmActualizarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmActualizarAutores.resx">
+      <DependentUpon>frmActualizarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmActualizarCategoria.resx">
+      <DependentUpon>frmActualizarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmActualizarEditorial.resx">
+      <DependentUpon>frmActualizarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmActualizarLectores.resx">
+      <DependentUpon>frmActualizarLectores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmActualizarLibros.resx">
+      <DependentUpon>frmActualizarLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarAdministrador.resx">
+      <DependentUpon>frmInsertarAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarAutores.resx">
+      <DependentUpon>frmInsertarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarCategoria.resx">
+      <DependentUpon>frmInsertarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarEditorial.resx">
+      <DependentUpon>frmInsertarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarLector.resx">
+      <DependentUpon>frmInsertarLector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarLibro.resx">
+      <DependentUpon>frmInsertarLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmAlquileres.resx">
+      <DependentUpon>frmAlquileres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmAdministradores.resx">
+      <DependentUpon>frmAdministradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmInsertarAlquiler.resx">
+      <DependentUpon>frmInsertarAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmLectores.resx">
+      <DependentUpon>frmLectores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmPrestamosFinalizados.resx">
+      <DependentUpon>frmPrestamosFinalizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmAutor.resx">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmCategoria.resx">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmEditoriales.resx">
+      <DependentUpon>frmEditoriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\principales\frmLibros.resx">
+      <DependentUpon>frmLibros.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\insert-update\frmRecibir.resx">
+      <DependentUpon>frmRecibir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EntityDeploy Include="conexion\biblioteca.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>biblioteca.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="conexion\biblioteca.edmx.diagram">
+      <DependentUpon>biblioteca.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Administradores.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Alquileres.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.AlquileresPendientes.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Autores.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Categorias.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Editoriales.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Lectores.datasource" />
+    <None Include="Properties\DataSources\AdminLabrary.entidades.Libros.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1665670 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autorrrrrr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUTOR2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="conexion\biblioteca.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>biblioteca.edmx</DependentUpon>
+      <LastGenOutput>biblioteca.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="conexion\biblioteca.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>biblioteca.edmx</DependentUpon>
+      <LastGenOutput>biblioteca.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
